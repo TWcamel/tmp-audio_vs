@@ -20,7 +20,7 @@ let workletNode;
 let audioData = null;
 let audioPlaying = false;
 
-let audioUrl = "/tmp-audio_vs/assets/js/boyne-hunt-the.mp3";   //url https://www.youtube.com/watch?v=kznhSUTR0JA
+let audioUrl = "https://twcamel.github.io/tmp-audio_vs/assets/js/boyne-hunt-the.mp3";   //url https://www.youtube.com/watch?v=kznhSUTR0JA
 let current_playing = "The Boyne Hunt, Miss Stirling, 'Cooley', track 8";
 // This must be hosted on the same server as this page, otherwise Cross Site Scripting error
 
