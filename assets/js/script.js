@@ -20,7 +20,7 @@ let workletNode;
 let audioData = null;
 let audioPlaying = false;
 
-let audioUrl = "/assets/js/boyne-hunt-the.mp3";   //url https://www.youtube.com/watch?v=kznhSUTR0JA
+let audioUrl = "assets/js/boyne-hunt-the.mp3";   //url https://www.youtube.com/watch?v=kznhSUTR0JA
 let current_playing = "The Boyne Hunt, Miss Stirling, 'Cooley', track 8";
 // This must be hosted on the same server as this page, otherwise Cross Site Scripting error
 
@@ -154,7 +154,7 @@ function dnd_play(dnd_file)
     }
     
     sourceNode = DnDaudioContext.createBufferSource();
-    DnDaudioContext.audioWorklet.addModule('/assets/js/analyzernode.js').then(function() {
+    DnDaudioContext.audioWorklet.addModule('assets/js/analyzernode.js').then(function() {
 
         workletNode = new AudioWorkletNode(DnDaudioContext, 'spectrum-processor');
         workletNode.port.onmessage = (e) => workletMsgRx(e.data);
@@ -256,7 +256,7 @@ function offline_play()
 
             
 
-    offAudioContext.audioWorklet.addModule('/assets/js/analyzernode.js').then(function() {
+    offAudioContext.audioWorklet.addModule('assets/js/analyzernode.js').then(function() {
         workletNode = new AudioWorkletNode(offAudioContext, 'spectrum-processor');
 
         workletNode.port.onmessage = (e) => workletMsgRx(e.data);
