@@ -96,7 +96,7 @@ function online_play()
             });
             
 
-    audioContext.audioWorklet.addModule('/tmp-audio_vs/assets/js/analyzernode.js').then(()=> {
+    audioContext.audioWorklet.addModule('https://twcamel.github.io/tmp-audio_vs/assets/js/analyzernode.js').then(()=> {
 
         workletNode = new AudioWorkletNode(audioContext, 'spectrum-processor');
         workletNode.port.onmessage = (e) => workletMsgRx(e.data);
@@ -154,7 +154,7 @@ function dnd_play(dnd_file)
     }
     
     sourceNode = DnDaudioContext.createBufferSource();
-    DnDaudioContext.audioWorklet.addModule('/tmp-audio_vs/assets/js/analyzernode.js').then(function() {
+    DnDaudioContext.audioWorklet.addModule('https://twcamel.github.io/tmp-audio_vs/assets/js/analyzernode.js').then(function() {
 
         workletNode = new AudioWorkletNode(DnDaudioContext, 'spectrum-processor');
         workletNode.port.onmessage = (e) => workletMsgRx(e.data);
@@ -256,7 +256,7 @@ function offline_play()
 
             
 
-    offAudioContext.audioWorklet.addModule('/tmp-audio_vs/assets/js/analyzernode.js').then(function() {
+    offAudioContext.audioWorklet.addModule('https://twcamel.github.io/tmp-audio_vs/assets/js/analyzernode.js').then(function() {
         workletNode = new AudioWorkletNode(offAudioContext, 'spectrum-processor');
 
         workletNode.port.onmessage = (e) => workletMsgRx(e.data);
