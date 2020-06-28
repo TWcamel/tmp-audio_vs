@@ -2,7 +2,7 @@
 
 Online web based Mel-spectrum, power spectrum, FFT analyzer for speech and music processing.
 
-See the demo here: [tabahi.github.io/Mel-Spectrum-Analyzer](https://tabahi.github.io/Mel-Spectrum-Analyzer/)
+See the demo here: [TWcamel.github.io/tmp-audio_vs](https://TWcamel.github.io/tmp-audio_vs)
 
 Compatibility: Works on Firefox Desktop (v76), Chrome Desktop (v83) and Chrome Android (v81).
 
@@ -12,5 +12,5 @@ Everything is analyzed in a JavaScript Worklet node. The processing load may be 
 
 No external JS dependencies.
 
-The music file is from [youtube - agabo92](https://www.youtube.com/watch?v=kznhSUTR0JA) (CC License). It is a good example for observing notes transition.
+The music file is from [Aboyne Castle](http://abcnotation.com/tunePage?a=tunearch.org/wiki/Aboyne_Castle_(2).no-ext/0001) (CC License). It is a good example for observing notes transition.
 
