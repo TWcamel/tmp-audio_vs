@@ -387,7 +387,6 @@ function workletMsgRx(msg)
     {   
         if(plot_skip==1)
         {
-            //console.log(msg);
             band_amps = msg;
             if(spec_bands != band_amps.length)
             {
@@ -417,7 +416,7 @@ function workletMsgRx(msg)
     }
     else if(msg.bins_Hz)
     {
-        //console.log(msg.bins_Hz);
+        // console.log(msg.bins_Hz);
         bin_Hz = msg.bins_Hz;
         spec_bands = bin_Hz.length;
         skl = Math.round(spec_bands/32);
@@ -446,12 +445,9 @@ function plotBands()
     SpectrumCanvasCtx.fillRect(0, 0, SPEC_BOX_WIDTH, SPEC_BOX_HEIGHT);
 
     var barWidth = (SPEC_BOX_WIDTH / spec_bands);
+    // console.log('spec_bands', spec_bands)
     var barHeight;
     var x = 0;
-
-    /*
-    var max_bin_value = 0;
-    var max_bin = 0;*/
 
     for(var i = 0; i < spec_bands; i++)
     {
@@ -466,12 +462,6 @@ function plotBands()
 
         x += barWidth;
         
-        /*
-        if(band_amps[i] > max_bin_value)
-        {
-        max_bin_value = band_amps[i];
-        max_bin = i;
-        }*/
     }
     //console.log(String(max_bin), " / ", String(spec_bands));
     
@@ -665,16 +655,10 @@ function update_settings()
     settings.f_min = parseInt(document.getElementById("f_min").value);
     settings.f_max = parseInt(document.getElementById("f_max").value);
 
-    settings.N_fft_bins = parseInt(document.getElementById("N_fft_bins").value);
-    settings.N_mel_bins = parseInt(document.getElementById("N_mel_bins").value);
     settings.window_width = parseInt(document.getElementById("window_width").value);
     settings.window_step = parseInt(document.getElementById("window_step").value);
-    settings.pre_norm_gain = parseInt(document.getElementById("pre_norm_gain").value);
-    settings.pre_norm_silence_ceil = parseInt(document.getElementById("pre_norm_silence_ceil").value);
     settings.norm_max = parseInt(document.getElementById("norm_max").value);
     settings.local_norm_length = parseInt(document.getElementById("local_norm_length").value);
-    settings.high_f_emph = parseInt(document.getElementById("high_f_emph").value);
-    settings.skip_rate = parseInt(document.getElementById("skip_rate").value);
 
     settings.amplitude_log = document.getElementById("amplitude_log").checked;
     settings.freq_log = document.getElementById("freq_log").checked;
@@ -698,16 +682,10 @@ function dom_settings()
     document.getElementById("f_min").value = settings.f_min;
     document.getElementById("f_max").value = settings.f_max;
 
-    document.getElementById("N_fft_bins").value = settings.N_fft_bins;
-    document.getElementById("N_mel_bins").value = settings.N_mel_bins;
     document.getElementById("window_width").value = settings.window_width;
     document.getElementById("window_step").value = settings.window_step;
-    document.getElementById("pre_norm_gain").value = settings.pre_norm_gain;
-    document.getElementById("pre_norm_silence_ceil").value = settings.pre_norm_silence_ceil;
     document.getElementById("norm_max").value = settings.norm_max;
     document.getElementById("local_norm_length").value = settings.local_norm_length;
-    document.getElementById("high_f_emph").value = settings.high_f_emph;
-    document.getElementById("skip_rate").value = settings.skip_rate;
 
     document.getElementById("amplitude_log").checked = settings.amplitude_log;
     document.getElementById("freq_log").checked = settings.freq_log;
@@ -724,15 +702,15 @@ function setup()
     SpectrumCanvasCtx.fillRect(0, 0, SPEC_BOX_WIDTH, SPEC_BOX_HEIGHT);
 
     SpectrumCanvasCtx.font = "30px Trebuchet MS";
-    SpectrumCanvasCtx.fillStyle = "gray";
+    SpectrumCanvasCtx.fillStyle = "#17a2b8";
     SpectrumCanvasCtx.textAlign = "center";
-    SpectrumCanvasCtx.fillText("^_^", 500, 100); 
+    SpectrumCanvasCtx.fillText("(^_っ^) (^_っ^) (^_っ^)", 500, 100); 
 
     
     var dropzone = document.getElementById('dropZone');
     dropzone.addEventListener('drop', handleDrop, false)
     dropzone.addEventListener('dragover', handleDragOver, false)
-    console.log("Ready");
+    alert('Ready to go, have fun!')
 }
 
 window.onload = setup;
